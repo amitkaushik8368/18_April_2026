@@ -28,8 +28,10 @@ public class AdvanceLoginTest
         }  catch(RuntimeException | IOException e) {
             System.out.println("Exception Occurred");
         }
-        String username = prop.getProperty("username");
-        String password = prop.getProperty("password");
+        String validUsername = prop.getProperty("validUsername");
+        String validPassword = prop.getProperty("validPassword");
+        String invalidUsername = prop.getProperty("invalidUsername");
+        String invalidPassword = prop.getProperty("invalidPassword");
         String url = prop.getProperty("url");
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
@@ -38,10 +40,27 @@ public class AdvanceLoginTest
         WebElement usernameLocator = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
         WebElement passwordLocator = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
         WebElement loginButtonLocator = wait.until(ExpectedConditions.elementToBeClickable(By.className("radius")));
-
-        usernameLocator.sendKeys(username);
-        passwordLocator.sendKeys(password);
+        usernameLocator.sendKeys(invalidUsername);
+        passwordLocator.sendKeys(invalidPassword);
         loginButtonLocator.click();
+
+        /**
+         *
+         * Main Method
+         *    ↓
+         * Load Properties
+         *    ↓
+         * Initialize Driver
+         *    ↓
+         * Run Test Case 1 (Valid Login)
+         *    ↓
+         * Run Test Case 2 (Invalid Login)
+         *    ↓
+         * Close Driver
+         *    ↓
+         * Write Results
+         *
+         */
 
 
 
