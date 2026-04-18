@@ -6,4 +6,16 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - 18_April_2026</name>
   <url>http://maven.apache.org</url>
+
+
+  <dependencies>
+    <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.43.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
 </project>
