@@ -6,9 +6,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class DriverManager
 {
     WebDriver driver;
-    void initialize()
+    public void setDriver()
     {
-        driver = new EdgeDriver();
+        this.driver = new EdgeDriver();
+    }
+    WebDriver getDriver()
+    {
+        if (driver==null) {
+            throw new IllegalStateException("The driver is null");
+        }
+        else return this.driver;
     }
     void teardown()
     {
