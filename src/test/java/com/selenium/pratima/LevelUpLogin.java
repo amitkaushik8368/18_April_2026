@@ -43,7 +43,7 @@ public class LevelUpLogin
 //        extentReports.flush();
 //        Thread.sleep(3000);
 //        driverManager.teardown();
-        //loginPageLoadTest();
+        loginPageLoadTest();
         validLogin();
         invalidUsernameLogin();
         invalidPasswordLogin();
@@ -59,8 +59,6 @@ public class LevelUpLogin
         driverManager.getDriver().get(DataRepository.getUrl());
         driverManager.getDriver().manage().window().maximize();
         String pageTitle = driverManager.getDriver().getTitle();
-        System.out.println(pageTitle);
-
         ExtentReports reports = new ExtentReports();
         ExtentTest test = reports.createTest("Login Page Load");
         ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\PageLoad.html");
@@ -84,9 +82,9 @@ public class LevelUpLogin
         DataRepository.loadData();
         driverManager.getDriver().get(DataRepository.getUrl());
         LoginPage loginPage = new LoginPage(driverManager.getDriver());
-        loginPage.username.sendKeys(DataRepository.getUserName());
-        loginPage.password.sendKeys(DataRepository.getPassWord());
-        loginPage.clickButton.click();
+        loginPage.locateUsername().sendKeys(DataRepository.getUserName());
+        loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
+        loginPage.locateLoginButton().click();
         DashBoard dashBoard = new DashBoard(driverManager.getDriver());
         String displayMessage = dashBoard.loggedInMessage.getText();
         ExtentReports reports = new ExtentReports();
@@ -106,34 +104,28 @@ public class LevelUpLogin
 
     static void invalidUsernameLogin() throws IOException {
         // Validate the right error message for invalid username
-//        DriverManager driverManager = new DriverManager();
-//        driverManager.setDriver();
-//        DataRepository.loadData();
-//        driverManager.getDriver().manage().window().maximize();
-//        driverManager.getDriver().get(DataRepository.getUrl());
-//        LoginPage loginPage = new LoginPage(driverManager.getDriver());
         DriverManager driverManager = new DriverManager();
         driverManager.setDriver();
         driverManager.getDriver().manage().window().maximize();
         DataRepository.loadData();
         driverManager.getDriver().get(DataRepository.getUrl());
-        System.out.println(driverManager.getDriver());
         LoginPage loginPage = new LoginPage(driverManager.getDriver());
-        loginPage.username.sendKeys(DataRepository.getInvalidUsername());
-        loginPage.password.sendKeys(DataRepository.getPassWord());
-        loginPage.clickButton.click();
+        loginPage.locateUsername().sendKeys(DataRepository.getInvalidUsername());
+        loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
+        loginPage.locateLoginButton().click();
         ExtentReports reports = new ExtentReports();
         ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\InvalidUsernameLogin.html");
         reports.attachReporter(reporter);
-        ;
         ExtentTest test = reports.createTest("Invalid Username");
         try {
-            assertThat(loginPage.loggedInErrorMessage.getText()).contains("username is invalid");
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("username is invalid");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
             test.fail("The test has failed : " + e.getMessage());
         }
+        driverManager.teardown();
+        reports.flush();
     }
     static void invalidPasswordLogin() throws IOException {
         // Validate the right error message for invalid password
@@ -143,20 +135,22 @@ public class LevelUpLogin
         driver.getDriver().manage().window().maximize();
         driver.getDriver().get(DataRepository.getUrl());
         LoginPage loginPage = new LoginPage(driver.getDriver());
-        loginPage.username.sendKeys(DataRepository.getUserName());
-        loginPage.password.sendKeys(DataRepository.getInvalidPassword());
-        loginPage.clickButton.click();
+        loginPage.locateUsername().sendKeys(DataRepository.getUserName());
+        loginPage.locatePassword().sendKeys(DataRepository.getInvalidPassword());
+        loginPage.locateLoginButton().click();
         ExtentReports reports = new ExtentReports();
         ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\InvalidPasswordLogin.html");
         reports.attachReporter(reporter);
         ExtentTest test = reports.createTest("Invalid Password");
         try {
-            assertThat(loginPage.loggedInErrorMessage.getText()).contains("password is invalid");
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("password is invalid");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
             test.fail("The test has failed : " + e.getMessage());
         }
+        driver.teardown();
+        reports.flush();
     }
     static void logoutCheck() throws IOException {
         // Validate user can log out after login
@@ -166,13 +160,13 @@ public class LevelUpLogin
         driver.getDriver().manage().window().maximize();
         driver.getDriver().get(DataRepository.getUrl());
         LoginPage loginPage = new LoginPage(driver.getDriver());
-        loginPage.username.sendKeys(DataRepository.getUserName());
-        loginPage.password.sendKeys(DataRepository.getInvalidPassword());
-        loginPage.clickButton.click();
+        loginPage.locateUsername().sendKeys(DataRepository.getUserName());
+        loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
+        loginPage.locateLoginButton().click();
         DashBoard dashBoard = new DashBoard(driver.getDriver());
         String displayMessage = dashBoard.loggedInMessage.getText();
         ExtentReports reports = new ExtentReports();
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\ValidLogin.html");
+        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\LogoutCheck.html");
         reports.attachReporter(reporter);
         ExtentTest test = reports.createTest("Logout Check");
         try {
@@ -190,6 +184,7 @@ public class LevelUpLogin
         {
             test.fail("User isn't able to logout : " + e.getMessage());
         }
-
+        driver.teardown();
+        reports.flush();
     }
 }

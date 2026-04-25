@@ -12,19 +12,31 @@ import java.time.Duration;
 public class LoginPage
 {
     WebDriver driver;
-    WebDriverWait wait;
-    public WebElement username;
-    public WebElement password;
-    public WebElement clickButton;
-    public WebElement loggedInErrorMessage;
+    WebDriverWait wait;;
+
     public LoginPage(WebDriver driver)
     {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
-        clickButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("radius")));
-        loggedInErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flash")));
+        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(3));
     }
 
+
+
+    public WebElement locateUsername()
+    {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+    }
+
+    public WebElement locatePassword()
+    {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
+    }
+    public WebElement locateLoginButton()
+    {
+        return wait.until(ExpectedConditions.elementToBeClickable(By.className("radius")));
+    }
+    public WebElement locateLoginErrorMessage()
+    {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flash")));
+    }
 }
