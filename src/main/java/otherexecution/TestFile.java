@@ -1,4 +1,4 @@
-package com.selenium.pratima;
+package com.selenium.pratima.otherexecution;
 
 public class TestFile
 {

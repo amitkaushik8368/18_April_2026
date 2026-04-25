@@ -1,4 +1,4 @@
-package com.selenium.pratima;
+package com.selenium.pratima.otherexecution;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;

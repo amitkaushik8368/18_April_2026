@@ -10,14 +10,14 @@ public class DriverManager
     {
         this.driver = new EdgeDriver();
     }
-    WebDriver getDriver()
+    public WebDriver getDriver()
     {
         if (driver==null) {
             throw new IllegalStateException("The driver is null");
         }
         else return this.driver;
     }
-    void teardown()
+    public void teardown()
     {
         driver.quit();
     }
