@@ -9,6 +9,7 @@ public class DriverManager
     public void setDriver()
     {
         this.driver = new EdgeDriver();
+        driver.manage().window().maximize();
     }
     public WebDriver getDriver()
     {

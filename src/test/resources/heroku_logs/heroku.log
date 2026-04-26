@@ -1,0 +1,52 @@
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: First test executed
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: Second test executed
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+WARNING: Third test executed
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: Fourth test executed
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: Fifth test executed
+Apr 26, 2026 6:25:06 PM com.selenium.pratima.LevelUpLogin main
+INFO: Status of all tests are logged into the report
+Apr 26, 2026 6:25:11 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+Apr 26, 2026 6:25:17 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:25:18 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:25:19 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: First test executed
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Second test executed
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+WARNING: Third test executed
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Fourth test executed
+Apr 26, 2026 6:30:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Fifth test executed
+Apr 26, 2026 6:30:08 PM com.selenium.pratima.LevelUpLogin main
+INFO: Status of all tests are logged into the report
+Apr 26, 2026 6:30:13 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+Apr 26, 2026 6:30:19 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:30:20 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:30:20 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:30:20 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+Apr 26, 2026 6:30:21 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken

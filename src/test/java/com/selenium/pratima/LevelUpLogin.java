@@ -7,79 +7,104 @@ import com.selenium.driver.DriverManager;
 import com.selenium.pages.DashBoard;
 import com.selenium.pages.LoginPage;
 import com.selenium.utilities.DataRepository;
-
+import com.selenium.utilities.ScreenshotHelper;
 import java.io.IOException;
-import static org.assertj.core.api.Assertions.assertThat;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchException;
 
 public class LevelUpLogin
 {
-    public static void main(String[] args) throws IOException, InterruptedException {
-//        DriverManager driverManager = new DriverManager();
-//        driverManager.setDriver();
-//        driverManager.getDriver().manage().window().maximize();
-//        LoadProperties.loadProperties();
-//        driverManager.getDriver().get(LoadProperties.getUrl());
-//        LoginPage loginPage = new LoginPage(driverManager.getDriver());
-//        loginPage.username.sendKeys(LoadProperties.getUserName());
-//        loginPage.password.sendKeys(LoadProperties.getPassWord());
-//        loginPage.clickButton.click();
-//        DashBoard dashBoard = new DashBoard(driverManager.getDriver());
-//        String loginMessage = dashBoard.loggedInMessage.getText().replaceAll("[^A-Za-z ]", "").trim();
-//
-//        ExtentReports extentReports = new ExtentReports();
-//        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") +
-//                "\\src\\test\\resources\\ExtentReport.html");
-//        extentReports.attachReporter(reporter);
-//        ExtentTest test = extentReports.createTest("Login Test");
-//
-//        try {
-//            assertThat(loginMessage).isEqualTo("You logged into a secure area");
-//            test.pass("Test Passed");
-//        } catch (AssertionError e)
-//        {
-//            test.fail("Test Failed" + e.getMessage());
-//        }
-//        extentReports.flush();
-//        Thread.sleep(3000);
-//        driverManager.teardown();
-        loginPageLoadTest();
-        validLogin();
-        invalidUsernameLogin();
-        invalidPasswordLogin();
-        logoutCheck();
+    public static final Logger logger = Logger.getLogger(LevelUpLogin.class.getName());
+    static ExtentReports reports = new ExtentReports();
+    static ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\test_reports\\CombinedExtentReport.html");
+    public static void main(String[] args) throws Exception
+    {
+        FileHandler fileHandler = new FileHandler(System.getProperty("user.dir") + "\\src\\test\\resources\\heroku_logs\\heroku.log", true);
+        fileHandler.setFormatter(new SimpleFormatter());
+        logger.addHandler(fileHandler);
+        logger.info("Let's begin our Test Execution");
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        DataRepository.loadData();
+        logger.info("Data properties are loaded");
+        reports.attachReporter(reporter);
+        executorService.submit(() -> {
+            try { loginPageLoadTest(); } catch (Exception e) {
+                System.out.println("Exception Occurred in Test1: " + e.getMessage());
+            }
+        });
+
+        logger.info("First test executed");
+        executorService.submit(()->
+        {
+            try {validLogin(); }catch (Exception e){
+                System.out.println("Exception Occurred in Test2 : " + e.getMessage());
+            }
+        });
+
+        logger.info("Second test executed");
+
+        executorService.submit(()->
+        {
+            try {invalidUsernameLogin(); }catch (Exception e){
+                System.out.println("Exception Occurred in Test3 : " + e.getMessage());
+            }
+        });
+
+
+        logger.warning("Third test executed");
+        executorService.submit(()->
+        {
+            try {invalidPasswordLogin(); }catch (Exception e){
+                System.out.println("Exception Occurred in Test4 : " + e.getMessage());
+            }
+        });
+
+        logger.info("Fourth test executed");
+        executorService.submit(()->
+        {
+            try {logoutCheck(); }catch (Exception e){
+                System.out.println("Exception Occurred in Test5 : " + e.getMessage());
+            }
+        });
+
+        logger.info("Fifth test executed");
+        reports.flush();
+        logger.info("Status of all tests are logged into the report");
+        executorService.shutdown();
     }
 
     static void loginPageLoadTest() throws IOException {
         // This test is to validate whether login page is loading up successfully
-
         DriverManager driverManager = new DriverManager();
         driverManager.setDriver();
-        DataRepository.loadData();
+        logger.info("Edge browser set for usage");
         driverManager.getDriver().get(DataRepository.getUrl());
-        driverManager.getDriver().manage().window().maximize();
         String pageTitle = driverManager.getDriver().getTitle();
-        ExtentReports reports = new ExtentReports();
         ExtentTest test = reports.createTest("Login Page Load");
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\PageLoad.html");
-        reports.attachReporter(reporter);
         try{
-            assertThat(pageTitle).contains("Internet");
+            assertThat(pageTitle).contains("Internet7");
             test.pass("The login Page is Loaded");
         } catch (AssertionError e)
         {
             test.fail("Login Page Did not Load" + e.getMessage());
+            ScreenshotHelper.takeScreenshot(driverManager.getDriver());
+            test.addScreenCaptureFromPath(ScreenshotHelper.getScreenshotFile(), "Error Snap");
+            //test.
+        }finally {
+            driverManager.teardown();
         }
-        driverManager.teardown();
-        reports.flush();
     }
 
     static void validLogin() throws IOException {
         // Validate login with correct credentials
         DriverManager driverManager = new DriverManager();
         driverManager.setDriver();
-        driverManager.getDriver().manage().window().maximize();
-        DataRepository.loadData();
         driverManager.getDriver().get(DataRepository.getUrl());
         LoginPage loginPage = new LoginPage(driverManager.getDriver());
         loginPage.locateUsername().sendKeys(DataRepository.getUserName());
@@ -87,104 +112,100 @@ public class LevelUpLogin
         loginPage.locateLoginButton().click();
         DashBoard dashBoard = new DashBoard(driverManager.getDriver());
         String displayMessage = dashBoard.loggedInMessage.getText();
-        ExtentReports reports = new ExtentReports();
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\ValidLogin.html");
-        reports.attachReporter(reporter);
         ExtentTest test = reports.createTest("Valid Login");
         try {
-            assertThat(displayMessage).contains("You logged");
+            assertThat(displayMessage).contains("You log3ged");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
             test.fail("The test has failed : " + e.getMessage());
+            ScreenshotHelper.takeScreenshot(driverManager.getDriver());
+            test.addScreenCaptureFromPath(ScreenshotHelper.getScreenshotFile(), "Valid Login Error Snap");
+        } finally {
+            driverManager.teardown();
         }
-        driverManager.teardown();
-        reports.flush();
+
     }
 
     static void invalidUsernameLogin() throws IOException {
         // Validate the right error message for invalid username
         DriverManager driverManager = new DriverManager();
         driverManager.setDriver();
-        driverManager.getDriver().manage().window().maximize();
-        DataRepository.loadData();
         driverManager.getDriver().get(DataRepository.getUrl());
         LoginPage loginPage = new LoginPage(driverManager.getDriver());
         loginPage.locateUsername().sendKeys(DataRepository.getInvalidUsername());
         loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
         loginPage.locateLoginButton().click();
-        ExtentReports reports = new ExtentReports();
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\InvalidUsernameLogin.html");
-        reports.attachReporter(reporter);
-        ExtentTest test = reports.createTest("Invalid Username");
+        ExtentTest test = reports.createTest("Invalid Udsername");
         try {
-            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("username is invalid");
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("usersname is invalid");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
             test.fail("The test has failed : " + e.getMessage());
+            ScreenshotHelper.takeScreenshot(driverManager.getDriver());
+            test.addScreenCaptureFromPath(ScreenshotHelper.getScreenshotFile(), "Error Snap");
+        }finally {
+            driverManager.teardown();
         }
-        driverManager.teardown();
-        reports.flush();
     }
+
+
     static void invalidPasswordLogin() throws IOException {
         // Validate the right error message for invalid password
-        DriverManager driver = new DriverManager();
-        driver.setDriver();
-        DataRepository.loadData();
-        driver.getDriver().manage().window().maximize();
-        driver.getDriver().get(DataRepository.getUrl());
-        LoginPage loginPage = new LoginPage(driver.getDriver());
+        DriverManager driverManager = new DriverManager();
+        driverManager.setDriver();
+        driverManager.getDriver().get(DataRepository.getUrl());
+        LoginPage loginPage = new LoginPage(driverManager.getDriver());
         loginPage.locateUsername().sendKeys(DataRepository.getUserName());
         loginPage.locatePassword().sendKeys(DataRepository.getInvalidPassword());
         loginPage.locateLoginButton().click();
-        ExtentReports reports = new ExtentReports();
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\InvalidPasswordLogin.html");
-        reports.attachReporter(reporter);
         ExtentTest test = reports.createTest("Invalid Password");
         try {
-            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("password is invalid");
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("passwsord is invalid");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
             test.fail("The test has failed : " + e.getMessage());
+            ScreenshotHelper.takeScreenshot(driverManager.getDriver());
+            test.addScreenCaptureFromPath(ScreenshotHelper.getScreenshotFile(), "Error Snap");
+        }finally {
+            driverManager.teardown();
         }
-        driver.teardown();
-        reports.flush();
     }
+
     static void logoutCheck() throws IOException {
         // Validate user can log out after login
-        DriverManager driver = new DriverManager();
-        driver.setDriver();
-        DataRepository.loadData();
-        driver.getDriver().manage().window().maximize();
-        driver.getDriver().get(DataRepository.getUrl());
-        LoginPage loginPage = new LoginPage(driver.getDriver());
+        DriverManager driverManager = new DriverManager();
+        driverManager.setDriver();
+        driverManager.getDriver().get(DataRepository.getUrl());
+        LoginPage loginPage = new LoginPage(driverManager.getDriver());
         loginPage.locateUsername().sendKeys(DataRepository.getUserName());
         loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
         loginPage.locateLoginButton().click();
-        DashBoard dashBoard = new DashBoard(driver.getDriver());
+        DashBoard dashBoard = new DashBoard(driverManager.getDriver());
         String displayMessage = dashBoard.loggedInMessage.getText();
-        ExtentReports reports = new ExtentReports();
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\LogoutCheck.html");
-        reports.attachReporter(reporter);
         ExtentTest test = reports.createTest("Logout Check");
         try {
             assertThat(displayMessage).contains("You logged");
         } catch (AssertionError e)
         {
             test.fail("The test has failed : " + e.getMessage());
+            ScreenshotHelper.takeScreenshot(driverManager.getDriver());
+            test.addScreenCaptureFromPath(ScreenshotHelper.getScreenshotFile(), "Error Snap");
         }
 
         dashBoard.logoutButton.click();
         try{
-            assertThat(driver.getDriver().getTitle()).contains("Internet");
+            assertThat(driverManager.getDriver().getTitle()).contains("Intkernet");
             test.pass("User can logout successfully");
         } catch (AssertionError e)
         {
             test.fail("User isn't able to logout : " + e.getMessage());
+            ScreenshotHelper.takeScreenshot(driverManager.getDriver());
+            test.addScreenCaptureFromPath(ScreenshotHelper.getScreenshotFile(), "Error Snap");
+        }finally {
+            driverManager.teardown();
         }
-        driver.teardown();
-        reports.flush();
     }
 }
