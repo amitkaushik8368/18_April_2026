@@ -50,3 +50,437 @@ Apr 26, 2026 6:30:20 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
 INFO: Screenshot Taken
 Apr 26, 2026 6:30:21 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
 INFO: Screenshot Taken
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+INFO: First test executed
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+INFO: Second test executed
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+WARNING: Third test executed
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fourth test executed
+May 01, 2026 11:08:08 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fifth test executed
+May 01, 2026 11:08:09 AM com.selenium.pratima.LevelUpLogin main
+INFO: Status of all tests are logged into the report
+May 01, 2026 11:08:15 AM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 11:08:21 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:08:23 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:08:24 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:08:24 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:08:26 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+INFO: First test executed
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+INFO: Second test executed
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+WARNING: Third test executed
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fourth test executed
+May 01, 2026 11:09:10 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fifth test executed
+May 01, 2026 11:09:11 AM com.selenium.pratima.LevelUpLogin main
+INFO: Status of all tests are logged into the report
+May 01, 2026 11:09:16 AM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 11:09:21 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:09:22 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:09:22 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:09:22 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:09:23 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:10:21 AM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 11:10:21 AM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 11:10:22 AM com.selenium.pratima.LevelUpLogin main
+INFO: First test executed
+May 01, 2026 11:10:22 AM com.selenium.pratima.LevelUpLogin main
+INFO: Second test executed
+May 01, 2026 11:10:22 AM com.selenium.pratima.LevelUpLogin main
+WARNING: Third test executed
+May 01, 2026 11:10:22 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fourth test executed
+May 01, 2026 11:10:22 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fifth test executed
+May 01, 2026 11:10:22 AM com.selenium.pratima.LevelUpLogin main
+INFO: Status of all tests are logged into the report
+May 01, 2026 11:10:26 AM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 11:10:31 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:10:32 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:10:32 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:10:32 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:10:33 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+INFO: First test executed
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+INFO: Second test executed
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+WARNING: Third test executed
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fourth test executed
+May 01, 2026 11:12:26 AM com.selenium.pratima.LevelUpLogin main
+INFO: Fifth test executed
+May 01, 2026 11:12:27 AM com.selenium.pratima.LevelUpLogin main
+INFO: Status of all tests are logged into the report
+May 01, 2026 11:12:32 AM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 11:12:37 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:12:39 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:12:39 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:12:39 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 11:12:40 AM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:31:02 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:31:02 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:31:09 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:31:15 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:31:16 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:31:16 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:31:16 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:31:17 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:35:24 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:35:24 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:35:30 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:35:36 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:35:37 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:35:37 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:35:37 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:35:39 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:36:04 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:36:04 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:36:10 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:36:33 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:36:33 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:36:39 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:36:43 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:36:45 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:36:45 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:36:45 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:36:46 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:38:29 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:38:29 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:38:35 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:38:39 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:38:39 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:38:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:38:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:38:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:43:33 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:43:33 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:43:37 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:43:45 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:43:46 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:43:47 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:43:47 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:46:49 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:46:49 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:46:54 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:47:00 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:00 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:01 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:01 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:02 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:40 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 12:47:40 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 12:47:46 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 12:47:51 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:52 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:52 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:52 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 12:47:53 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:05:21 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:05:21 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:05:30 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:05:37 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:05:39 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:05:39 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:05:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:05:42 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:07:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:07:07 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:07:16 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:07:22 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:07:23 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:07:23 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:07:23 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:07:25 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:14:05 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:14:05 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:14:14 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:14:20 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:14:22 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:14:22 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:14:22 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:14:23 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:16:21 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:16:21 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:16:30 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:16:38 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:16:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:16:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:16:40 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:16:41 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:23:28 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:23:28 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:23:35 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:23:41 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:23:43 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:23:43 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:23:43 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:23:44 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:25:44 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:25:44 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:25:52 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:25:59 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:26:59 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:26:59 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:27:08 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:27:14 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 3:29:01 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:29:01 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:29:08 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 3:29:46 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 3:29:46 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 3:29:54 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 4:03:01 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 4:03:01 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 4:03:10 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 4:03:16 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:03:18 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:03:18 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:03:18 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:03:19 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:31:34 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 4:31:35 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 4:31:43 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 4:31:52 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:31:52 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:31:53 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:32:54 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 4:32:54 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 4:33:03 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 4:33:10 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:33:10 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:33:11 PM com.selenium.utilities.ScreenshotHelper takeScreenshot
+INFO: Screenshot Taken
+May 01, 2026 4:37:13 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 4:37:13 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 4:37:20 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Edge browser set for usage
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load test execution started
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login test execution started
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: InValid Username Login test execution started
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: InValid Password Login test execution started
+May 01, 2026 6:42:04 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Logout check test execution started
+May 01, 2026 6:42:18 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load test execution ended
+May 01, 2026 6:42:19 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: InValid Password Login test execution ended
+May 01, 2026 6:42:19 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login test execution ended
+May 01, 2026 6:42:19 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: InValid Username Login test execution ended
+May 01, 2026 6:42:19 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Logout check test execution ended
+May 01, 2026 6:42:20 PM com.selenium.pratima.LevelUpLogin main
+INFO: All tests executed and report generated
+May 01, 2026 6:57:52 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 01, 2026 6:57:52 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 01, 2026 6:57:53 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load test execution started
+May 01, 2026 6:57:53 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: InValid Username Login test execution started
+May 01, 2026 6:57:53 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login test execution started
+May 01, 2026 6:57:53 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: InValid Password Login test execution started
+May 01, 2026 6:57:53 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Logout check test execution started
+May 01, 2026 6:58:06 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load test execution ended
+May 01, 2026 6:58:06 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login test execution ended
+May 01, 2026 6:58:06 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: InValid Username Login test execution ended
+May 01, 2026 6:58:07 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: InValid Password Login test execution ended
+May 01, 2026 6:58:08 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Logout check test execution ended
+May 01, 2026 6:58:09 PM com.selenium.pratima.LevelUpLogin main
+INFO: All tests executed and report generated
