@@ -20,7 +20,7 @@ public class AdvanceScreenshotHelper
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy_hhmmss");
         String datetime = formatter.format(localDateTime);
         int counterValueUsed = LevelUpLogin.counter.incrementAndGet();
-        String path = System.getProperty("user.dir") + "\\src\\test\\resources\\screenshots\\screenshot_" +datetime + counterValueUsed + ".png";
+        String path = System.getProperty("user.dir") + "\\src\\test\\resources\\screenshots\\screenshot_" +datetime + "_" + counterValueUsed + ".png";
         File dest = new File(path);
         TakesScreenshot ts = (TakesScreenshot) driver;
         File src = ts.getScreenshotAs(OutputType.FILE);

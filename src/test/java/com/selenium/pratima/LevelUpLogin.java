@@ -101,7 +101,7 @@ public class LevelUpLogin
         String pageTitle = driverManager.getDriver().getTitle();
         ExtentTest test = reports.createTest("Login Page Load");
         try{
-            assertThat(pageTitle).contains("Internet");
+            assertThat(pageTitle).contains("Inter7net");
             test.pass("The login Page is Loaded");
         } catch (AssertionError e)
         {
@@ -130,7 +130,7 @@ public class LevelUpLogin
         String displayMessage = dashBoard.loggedInMessage.getText();
         ExtentTest test = reports.createTest("Valid Login");
         try {
-            assertThat(displayMessage).contains("You logged");
+            assertThat(displayMessage).contains("You lo7gged");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
@@ -157,7 +157,7 @@ public class LevelUpLogin
         loginPage.locateLoginButton().click();
         ExtentTest test = reports.createTest("Invalid Username");
         try {
-            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("username is invalid");
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("usern7ame is invalid");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
@@ -184,7 +184,7 @@ public class LevelUpLogin
         loginPage.locateLoginButton().click();
         ExtentTest test = reports.createTest("Invalid Password");
         try {
-            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("password is invalid");
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("passwor7d is invalid");
             test.pass("The Test has passed");
         } catch (AssertionError e)
         {
@@ -221,7 +221,7 @@ public class LevelUpLogin
 
         dashBoard.logoutButton.click();
         try{
-            assertThat(driverManager.getDriver().getTitle()).contains("Internet");
+            assertThat(driverManager.getDriver().getTitle()).contains("Inte7rnet");
             test.pass("User can logout successfully");
         } catch (AssertionError e)
         {
