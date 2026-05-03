@@ -1,0 +1,251 @@
+package com.selenium.pratima;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.selenium.driver.AdvanceDriverManager;
+import com.selenium.driver.DriverManager;
+import com.selenium.pages.DashBoard;
+import com.selenium.pages.LoginPage;
+import com.selenium.utilities.AdvanceScreenshotHelper;
+import com.selenium.utilities.DataRepository;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+import static org.assertj.core.api.Assertions.assertThat;
+
+
+public class AdvanceLevelUpLogin
+{
+    public static final AtomicInteger counter = new AtomicInteger();
+    public static final Logger logger = Logger.getLogger(AdvanceLevelUpLogin.class.getName());
+    static final ExtentReports reports = new ExtentReports();
+    static ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\test_reports\\CombinedExtentReport.html");
+    static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+    public static void main(String[] args) throws Exception
+    {
+        //public static final AtomicInteger counter = new AtomicInteger();
+        FileHandler fileHandler = new FileHandler(System.getProperty("user.dir") + "\\src\\test\\resources\\heroku_logs\\heroku.log", true);
+        fileHandler.setFormatter(new SimpleFormatter());
+        logger.addHandler(fileHandler);
+        logger.info("Let's begin our Test Execution");
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        Runnable task1 = () -> {
+            try {
+                loginPageLoadTest();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        };
+        Runnable task2 = () -> {
+            try {
+                validLogin();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        };
+        Runnable task3 = () -> {
+          try {
+              invalidUsernameLogin();
+          }  catch (IOException e){
+              throw new RuntimeException(e);
+          }
+        };
+        Runnable task4 = ()->{
+          try {
+              invalidPasswordLogin();
+          }  catch (IOException e){
+              throw new RuntimeException(e);
+          }
+        };
+        Runnable task5 = () -> {
+            try {
+                logoutCheck();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        };
+        DataRepository.loadData();
+        logger.info("Data properties are loaded");
+        reports.attachReporter(reporter);
+
+        executorService.submit(task1);
+        executorService.submit(task2);
+        executorService.submit(task3);
+        executorService.submit(task4);
+        executorService.submit(task5);
+        executorService.shutdown();
+        executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.MINUTES); //wait indefinitely
+        reports.flush();
+        //logger.info("All tests executed and report generated");
+    }
+
+    static void loginPageLoadTest() throws IOException {
+        // This test is to validate whether login page is loading up successfully
+        //logger.info("Login Page Load test execution started");
+        AdvanceDriverManager.setUp();
+        //logger.info("Edge browser set for usage");
+        AdvanceDriverManager.getDriver().get(DataRepository.getUrl());
+        System.out.println(AdvanceDriverManager.getDriver());
+        WebDriverWait wait = new WebDriverWait(AdvanceDriverManager.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.titleContains("Internet"));
+        String pageTitle = AdvanceDriverManager.getDriver().getTitle();
+        synchronized (reports) {
+            test.set(reports.createTest("Login Page Load"));
+        }
+        //ThreadLocal<ExtentTest> test = reports.createTest("Login Page Load");
+        try{
+            assertThat(pageTitle).contains("Inter7net");
+            test.get().pass("The login Page is Loaded");
+        } catch (AssertionError e)
+        {
+            test.get().fail("Login Page did not Load" + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(AdvanceDriverManager.getDriver()), "Error Snap");
+            logger.info("Login Page Load Test has failed");
+            //test.
+        }finally {
+            AdvanceDriverManager.teardown();
+            test.remove();
+            //logger.info("Login Page Load test execution ended");
+        }
+    }
+
+    static void validLogin() throws IOException {
+        // Validate login with correct credentials
+        //logger.info("Valid Login test execution started");
+        AdvanceDriverManager.setUp();
+        AdvanceDriverManager.getDriver().get(DataRepository.getUrl());
+        System.out.println(AdvanceDriverManager.getDriver());
+        LoginPage loginPage = new LoginPage(AdvanceDriverManager.getDriver());
+        loginPage.locateUsername().sendKeys(DataRepository.getUserName());
+        loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
+        loginPage.locateLoginButton().click();
+        DashBoard dashBoard = new DashBoard(AdvanceDriverManager.getDriver());
+        String displayMessage = dashBoard.loggedInMessage.getText();
+        synchronized (reports){
+            test.set(reports.createTest("Valid Login"));
+        }
+        //ExtentTest test = reports.createTest("Valid Login");
+        try {
+            assertThat(displayMessage).contains("You lo7gged");
+            test.get().pass("The Test has passed");
+        } catch (AssertionError e)
+        {
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(AdvanceDriverManager.getDriver()), "Valid Login Error Snap");
+            logger.info("Valid Login Test has failed");
+        } finally {
+            AdvanceDriverManager.teardown();
+            test.remove();
+            //logger.info("Valid Login test execution ended");
+        }
+
+    }
+
+    static void invalidUsernameLogin() throws IOException {
+        // Validate the right error message for invalid username
+        //logger.info("InValid Username Login test execution started");
+        AdvanceDriverManager.setUp();
+        AdvanceDriverManager.getDriver().get(DataRepository.getUrl());
+        System.out.println(AdvanceDriverManager.getDriver());
+        LoginPage loginPage = new LoginPage(AdvanceDriverManager.getDriver());
+        loginPage.locateUsername().sendKeys(DataRepository.getInvalidUsername());
+        loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
+        loginPage.locateLoginButton().click();
+        synchronized (reports) {
+            test.set(reports.createTest("Invalid Username"));
+        }
+        try {
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("usern7ame is invalid");
+            test.get().pass("The Test has passed");
+        } catch (AssertionError e)
+        {
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(AdvanceDriverManager.getDriver()), "Error Snap");
+            logger.info("Invalid Username Test has failed");
+        }finally {
+            AdvanceDriverManager.teardown();
+            test.remove();
+            //logger.info("InValid Username Login test execution ended");
+        }
+    }
+
+
+    static void invalidPasswordLogin() throws IOException {
+        // Validate the right error message for invalid password
+        //logger.info("InValid Password Login test execution started");
+        AdvanceDriverManager.setUp();
+        AdvanceDriverManager.getDriver().get(DataRepository.getUrl());
+        System.out.println(AdvanceDriverManager.getDriver());
+        LoginPage loginPage = new LoginPage(AdvanceDriverManager.getDriver());
+        loginPage.locateUsername().sendKeys(DataRepository.getUserName());
+        loginPage.locatePassword().sendKeys(DataRepository.getInvalidPassword());
+        loginPage.locateLoginButton().click();
+
+        synchronized (reports) {
+            test.set(reports.createTest("Invalid Password"));
+        }
+        //ExtentTest test = reports.createTest("Invalid Password");
+        try {
+            assertThat(loginPage.locateLoginErrorMessage().getText()).contains("passwor7d is invalid");
+            test.get().pass("The Test has passed");
+        } catch (AssertionError e)
+        {
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(AdvanceDriverManager.getDriver()), "Error Snap");
+            logger.info("Invalid Password Login Test has failed");
+        }finally {
+            AdvanceDriverManager.teardown();
+            test.remove();
+            //logger.info("InValid Password Login test execution ended");
+        }
+    }
+
+    static void logoutCheck() throws IOException {
+        // Validate user can log out after login
+        //logger.info("Logout check test execution started");
+        AdvanceDriverManager.setUp();
+        AdvanceDriverManager.getDriver().get(DataRepository.getUrl());
+        System.out.println(AdvanceDriverManager.getDriver());
+        LoginPage loginPage = new LoginPage(AdvanceDriverManager.getDriver());
+        loginPage.locateUsername().sendKeys(DataRepository.getUserName());
+        loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
+        loginPage.locateLoginButton().click();
+        DashBoard dashBoard = new DashBoard(AdvanceDriverManager.getDriver());
+        String displayMessage = dashBoard.loggedInMessage.getText();
+        synchronized (reports) {
+            test.set(reports.createTest("Logout Check"));
+        }
+        //ExtentTest test = reports.createTest("Logout Check");
+        try {
+            assertThat(displayMessage).contains("You logged");
+        } catch (AssertionError e)
+        {
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(AdvanceDriverManager.getDriver()), "Error Snap");
+        }
+
+        dashBoard.logoutButton.click();
+        try{
+            assertThat(AdvanceDriverManager.getDriver().getTitle()).contains("Inte7rnet");
+            test.get().pass("User can logout successfully");
+        } catch (AssertionError e)
+        {
+            test.get().fail("User isn't able to logout : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(AdvanceDriverManager.getDriver()), "Error Snap");
+            logger.info("Login Check Test has failed");
+        }finally {
+            AdvanceDriverManager.teardown();
+            test.remove();
+            //logger.info("Logout check test execution ended");
+        }
+    }
+}
