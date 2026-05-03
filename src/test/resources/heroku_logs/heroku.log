@@ -624,3 +624,53 @@ May 02, 2026 4:05:07 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
 INFO: Invalid Username Test has failed
 May 02, 2026 4:05:08 PM com.selenium.pratima.LevelUpLogin logoutCheck
 INFO: Login Check Test has failed
+May 03, 2026 4:45:13 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 03, 2026 4:45:13 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 03, 2026 4:57:44 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 03, 2026 4:57:44 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 03, 2026 4:57:55 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load Test has failed
+May 03, 2026 4:57:56 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: Invalid Password Login Test has failed
+May 03, 2026 4:57:57 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: Invalid Username Test has failed
+May 03, 2026 4:57:57 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login Test has failed
+May 03, 2026 4:57:58 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Login Check Test has failed
+May 03, 2026 5:13:25 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 03, 2026 5:13:25 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 03, 2026 5:13:35 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load Test has failed
+May 03, 2026 5:13:35 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: Invalid Username Test has failed
+May 03, 2026 5:13:36 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login Test has failed
+May 03, 2026 5:13:36 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: Invalid Password Login Test has failed
+May 03, 2026 5:13:36 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Login Check Test has failed
+May 03, 2026 5:16:49 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 03, 2026 5:16:49 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 03, 2026 5:24:24 PM com.selenium.pratima.LevelUpLogin main
+INFO: Let's begin our Test Execution
+May 03, 2026 5:24:24 PM com.selenium.pratima.LevelUpLogin main
+INFO: Data properties are loaded
+May 03, 2026 5:24:35 PM com.selenium.pratima.LevelUpLogin loginPageLoadTest
+INFO: Login Page Load Test has failed
+May 03, 2026 5:24:36 PM com.selenium.pratima.LevelUpLogin invalidPasswordLogin
+INFO: Invalid Password Login Test has failed
+May 03, 2026 5:24:36 PM com.selenium.pratima.LevelUpLogin validLogin
+INFO: Valid Login Test has failed
+May 03, 2026 5:24:36 PM com.selenium.pratima.LevelUpLogin invalidUsernameLogin
+INFO: Invalid Username Test has failed
+May 03, 2026 5:24:37 PM com.selenium.pratima.LevelUpLogin logoutCheck
+INFO: Login Check Test has failed

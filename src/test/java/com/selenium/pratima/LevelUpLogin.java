@@ -8,10 +8,8 @@ import com.selenium.pages.DashBoard;
 import com.selenium.pages.LoginPage;
 import com.selenium.utilities.AdvanceScreenshotHelper;
 import com.selenium.utilities.DataRepository;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.ExecutorService;
@@ -28,8 +26,9 @@ public class LevelUpLogin
 {
     public static final AtomicInteger counter = new AtomicInteger();
     public static final Logger logger = Logger.getLogger(LevelUpLogin.class.getName());
-    static ExtentReports reports = new ExtentReports();
+    static final ExtentReports reports = new ExtentReports();
     static ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\test_reports\\CombinedExtentReport.html");
+    static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
     public static void main(String[] args) throws Exception
     {
         //public static final AtomicInteger counter = new AtomicInteger();
@@ -99,18 +98,22 @@ public class LevelUpLogin
         WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.titleContains("Internet"));
         String pageTitle = driverManager.getDriver().getTitle();
-        ExtentTest test = reports.createTest("Login Page Load");
+        synchronized (reports) {
+            test.set(reports.createTest("Login Page Load"));
+        }
+        //ThreadLocal<ExtentTest> test = reports.createTest("Login Page Load");
         try{
             assertThat(pageTitle).contains("Inter7net");
-            test.pass("The login Page is Loaded");
+            test.get().pass("The login Page is Loaded");
         } catch (AssertionError e)
         {
-            test.fail("Login Page did not Load" + e.getMessage());
-            test.addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
+            test.get().fail("Login Page did not Load" + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
             logger.info("Login Page Load Test has failed");
             //test.
         }finally {
             driverManager.teardown();
+            test.remove();
             //logger.info("Login Page Load test execution ended");
         }
     }
@@ -128,17 +131,21 @@ public class LevelUpLogin
         loginPage.locateLoginButton().click();
         DashBoard dashBoard = new DashBoard(driverManager.getDriver());
         String displayMessage = dashBoard.loggedInMessage.getText();
-        ExtentTest test = reports.createTest("Valid Login");
+        synchronized (reports){
+            test.set(reports.createTest("Valid Login"));
+        }
+        //ExtentTest test = reports.createTest("Valid Login");
         try {
             assertThat(displayMessage).contains("You lo7gged");
-            test.pass("The Test has passed");
+            test.get().pass("The Test has passed");
         } catch (AssertionError e)
         {
-            test.fail("The test has failed : " + e.getMessage());
-            test.addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Valid Login Error Snap");
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Valid Login Error Snap");
             logger.info("Valid Login Test has failed");
         } finally {
             driverManager.teardown();
+            test.remove();
             //logger.info("Valid Login test execution ended");
         }
 
@@ -155,17 +162,20 @@ public class LevelUpLogin
         loginPage.locateUsername().sendKeys(DataRepository.getInvalidUsername());
         loginPage.locatePassword().sendKeys(DataRepository.getPassWord());
         loginPage.locateLoginButton().click();
-        ExtentTest test = reports.createTest("Invalid Username");
+        synchronized (reports) {
+            test.set(reports.createTest("Invalid Username"));
+        }
         try {
             assertThat(loginPage.locateLoginErrorMessage().getText()).contains("usern7ame is invalid");
-            test.pass("The Test has passed");
+            test.get().pass("The Test has passed");
         } catch (AssertionError e)
         {
-            test.fail("The test has failed : " + e.getMessage());
-            test.addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
             logger.info("Invalid Username Test has failed");
         }finally {
             driverManager.teardown();
+            test.remove();
             //logger.info("InValid Username Login test execution ended");
         }
     }
@@ -182,17 +192,22 @@ public class LevelUpLogin
         loginPage.locateUsername().sendKeys(DataRepository.getUserName());
         loginPage.locatePassword().sendKeys(DataRepository.getInvalidPassword());
         loginPage.locateLoginButton().click();
-        ExtentTest test = reports.createTest("Invalid Password");
+
+        synchronized (reports) {
+            test.set(reports.createTest("Invalid Password"));
+        }
+        //ExtentTest test = reports.createTest("Invalid Password");
         try {
             assertThat(loginPage.locateLoginErrorMessage().getText()).contains("passwor7d is invalid");
-            test.pass("The Test has passed");
+            test.get().pass("The Test has passed");
         } catch (AssertionError e)
         {
-            test.fail("The test has failed : " + e.getMessage());
-            test.addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
             logger.info("Invalid Password Login Test has failed");
         }finally {
             driverManager.teardown();
+            test.remove();
             //logger.info("InValid Password Login test execution ended");
         }
     }
@@ -210,26 +225,30 @@ public class LevelUpLogin
         loginPage.locateLoginButton().click();
         DashBoard dashBoard = new DashBoard(driverManager.getDriver());
         String displayMessage = dashBoard.loggedInMessage.getText();
-        ExtentTest test = reports.createTest("Logout Check");
+        synchronized (reports) {
+            test.set(reports.createTest("Logout Check"));
+        }
+        //ExtentTest test = reports.createTest("Logout Check");
         try {
             assertThat(displayMessage).contains("You logged");
         } catch (AssertionError e)
         {
-            test.fail("The test has failed : " + e.getMessage());
-            test.addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
+            test.get().fail("The test has failed : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
         }
 
         dashBoard.logoutButton.click();
         try{
             assertThat(driverManager.getDriver().getTitle()).contains("Inte7rnet");
-            test.pass("User can logout successfully");
+            test.get().pass("User can logout successfully");
         } catch (AssertionError e)
         {
-            test.fail("User isn't able to logout : " + e.getMessage());
-            test.addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
+            test.get().fail("User isn't able to logout : " + e.getMessage());
+            test.get().addScreenCaptureFromPath(AdvanceScreenshotHelper.takeScreenshot(driverManager.getDriver()), "Error Snap");
             logger.info("Login Check Test has failed");
         }finally {
             driverManager.teardown();
+            test.remove();
             //logger.info("Logout check test execution ended");
         }
     }
